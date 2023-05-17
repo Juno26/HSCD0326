@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body {
+        margin: 0;
+      }
+      .container {
+        display: grid;
+        padding: 30px;
+        grid-template-areas:
+          'question'
+          'content'
+          'back';
+        gap: 20px;
+        justify-content: center;
+        justify-items: center;
+      }
+      .question {
+        font-size: 50px;
+        grid-area: 'question';
+      }
+      .content {
+        background-color: #FFFFFF;
+        padding: 10px 40px;
+        border-radius: 30px;
+        grid-area: 'content';
+      }
+      h2 {
+        font-size: 30px;
+      }
+      .button_back {
+        padding: 10px 20px;
+        grid-area: 'back';
+        border: 2px solid black;
+        border-radius: 5px;
+        box-shadow: 0 0 3px gray;
+        justify-self: right;
+      }
+      #image {
+        width: 80%
+      }
+      #imgBox {
+        margin: 0;
+        background-color: #00000050;
+        position: absolute;
+        width: 100vw;
+        height: fit-content;
+        padding: 50px;
+      }
+      .hide {
+        opacity: 0;
+        display: none;
+      }
+      .show {
+        opacity: 1;
+        display: block;
+      }
+      strong{
+        font-size: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hide" id="imgBox">
+      <center>
+        <br><br><br>
+        <img id="image"></img>
+      </center>
+    </div>
+    <div class="container">
+      <h1 class="question">사진에 나오는 장소를 찾아서 값을 구하세요.</h1>
+      <div class="content">
+        <center>
+        <img src="s1.jpg" id="showImage1" width="50"></img> &nbsp;
+        <img src="s2.jpg" id="showImage2" width="50"></img> &nbsp;
+        <img src="s3.jpg" id="showImage3" width="50"></img> &nbsp;
+        <img src="s4.jpg" id="showImage4" width="50"></img> &nbsp;
+        <img src="s5.jpg" id="showImage5" width="50"></img> &nbsp;
+        <img src="s6.jpg" id="showImage6" width="50"></img> &nbsp;
+        <img src="s7.jpg" id="showImage7" width="50"></img>
+      </center>
+        <br><br><br><br>
+        <img src="s2.jpg" width="50"></img> &nbsp; <strong>+</strong> &nbsp;
+        <img src="s3.jpg" width="50"></img> &nbsp; <strong>x</strong> &nbsp;
+        <img src="s4.jpg" width="50"></img> &nbsp; <strong>+</strong> &nbsp;
+        <img src="s1.jpg" width="50"></img> &nbsp; <strong>-</strong> &nbsp;
+        <img src="s5.jpg" width="50"></img> &nbsp; <strong>-</strong> &nbsp;
+        <img src="s6.jpg" width="50"></img> &nbsp; <strong>+</strong> &nbsp;
+        <img src="s7.jpg" width="50"></img> &nbsp; <strong>=</strong> &nbsp; <strong>?</strong>
+        <br><br><br>
+      </div>
+      <button type="button" class="button_back" onclick="location='quests.html'">뒤로</button>
+    </div>
+    <script>
+      const show = [
+        document.getElementById('showImage1'),
+        document.getElementById('showImage2'),
+        document.getElementById('showImage3'),
+        document.getElementById('showImage4'),
+        document.getElementById('showImage5'),
+        document.getElementById('showImage6'),
+        document.getElementById('showImage7')
+      ];
+      const imageBox = document.getElementById('imgBox');
+      const image = document.getElementById('image');
+
+      show.forEach((item, i) => {
+        item.addEventListener('click', () => {
+          image.src = (i+1) + ".jpg";
+          imageBox.classList.replace("hide", "show");
+        });
+      });
+
+      imageBox.addEventListener('click', () => {
+        imageBox.classList.replace("show", "hide");
+      })
+    </script>
+
+  </body>
+</html>

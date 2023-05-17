@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .container {
+        display: grid;
+        margin: 30px;
+        grid-template-areas: 
+          'question'
+          'content'
+          'back';
+        gap: 20px;
+        justify-content: center;
+        justify-items: center;
+      }
+      .question {
+        font-size: 50px;
+        grid-area: 'question';
+      }
+      .content {
+        background-color: #F0F0F0;
+        padding: 30px 30px;
+        border-radius: 30px;
+        grid-area: 'content';
+      }
+      .button_back {
+        padding: 10px 20px;
+        grid-area: 'back';
+        border: 2px solid black;
+        border-radius: 5px;
+        box-shadow: 0 0 3px gray;
+        justify-self: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="question">이 그림속에서 세개의 숫자를 찾으세요.</h1>
+      <div class="content">
+        <img src="Q2_image.jpg" alt="문제 그림" width="300">
+      </div>
+      <button type="button" class="button_back" onclick="location='quests.html'">뒤로</button>
+    </div>
+  </body>
+</html>

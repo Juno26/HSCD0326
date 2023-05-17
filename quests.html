@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      h1{
+        font-size: 50px;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(to top right, rgb(95, 95, 255), rgb(140, 255, 255));
+        height: 100vh;
+      }
+      button {
+        width:200px;
+        height:100px;
+        position: relative;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        font-size: 200%;
+        font-weight: 600;
+        margin: 10px;
+      }
+      .button_grid {
+        margin: 40px;
+        width: fit-content;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+      }
+      button[name=button5] {
+        grid-column: 1 / 3;
+      }
+      .button2 {
+        width:140px;
+        height:70px;
+        position: relative;
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        font-weight: 600;
+        font-size: 20px;
+      }
+      .button11 {
+        float: right;
+        margin: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <br><br><br>
+      <h1>문제</h1>
+      <div class="button_grid">
+        <button type="button" name="button1" onclick="location='Q1.html'">Q1</button>
+        <button type="button" name="button2" onclick="location='Q2.html'">Q2</button>
+        <button type="button" name="button3" onclick="location='Q3.html'">Q3</button>
+        <button type="button" name="button4" onclick="location='Q4.html'">Q4</button>
+        <button type="button" name="button5" onclick="location='Q5.html'">Q5</button>
+      </div>
+    </center>
+    <div class="button11">
+      <button type="button" class="button2" onclick="location='main.html'">뒤로</button>
+    </div>
+  </body>
+</html>
